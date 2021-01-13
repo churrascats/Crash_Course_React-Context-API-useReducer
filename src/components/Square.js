@@ -1,8 +1,14 @@
 import React from 'react';
+
+import { useGameContext } from '../contexts/GameContext'
 import t from 'prop-types';
 
 
 export default function Square(props) {
+
+  const {value, index} = props
+
+  const state = useGameContext()
   const {
     squares,
     setSquares,
@@ -10,10 +16,8 @@ export default function Square(props) {
     setIsXNext,
     whoIsWinner,
     history,
-    setHistory,
-    value,
-    index
-  } = props
+    setHistory
+  } = state
 
   function handleClick() {
     if (squares[index]) return;

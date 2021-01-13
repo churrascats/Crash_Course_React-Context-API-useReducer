@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { useGameContext } from '../contexts/GameContext';
 import uuid from 'uuid/v4';
 
-export default function Board(props) {
+export default function Board() {
+  const state = useGameContext()
   const {
     history,
     setHistory,
     setSquares,
     setIsXNext,
     setWhoIsWinner,
-  } = props;
+  } = state;
 
   function handleClick(index) {
     const newHistory = [...history];

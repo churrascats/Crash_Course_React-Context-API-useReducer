@@ -1,7 +1,10 @@
 import React from 'react';
 
-export default function Reset(props) {
-  const { setSquares, setIsXNext, setWhoIsWinner, setHistory } = props
+import { useGameContext } from '../contexts/GameContext'
+
+export default function Reset() {
+  const state = useGameContext()
+  const { setSquares, setIsXNext, setWhoIsWinner, setHistory } = state
 
   function handleClick() {
     setSquares(Array(9).fill(null));
