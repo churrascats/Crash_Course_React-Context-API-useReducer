@@ -1,2 +1,1 @@
-﻿Crash_Course_React-Context-API-useReducer
-This repository have the goal to share a Application Evolution from pure states with useStates to Context API based to Context + useReducer using flux pattern step by step.
+﻿Essa branch mostra o resultado final da nossa implementação, substituimos useState por useReducer para gerenciar nossos estados e servimos os estados globais e o dispatch para nossos componentes através da Context API.
