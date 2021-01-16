@@ -3,23 +3,13 @@ import { useGameContext } from '../contexts/GameContext';
 import uuid from 'uuid/v4';
 
 export default function Board() {
-  const state = useGameContext()
   const {
-    history,
-    setHistory,
-    setSquares,
-    setIsXNext,
-    setWhoIsWinner,
-  } = state;
+    state: { history },
+    dispatch,
+  } = useGameContext();
 
   function handleClick(index) {
-    const newHistory = [...history];
-    newHistory.splice(index, Number.MAX_SAFE_INTEGER);
-    setHistory(newHistory);
-
-    setSquares(history[index].squares);
-    setIsXNext(history[index].isXNext);
-    setWhoIsWinner(history[index].whoIsWinner);
+    dispatch({ type: 'SET_NEW_HISTORY', payload: [history, index] });
   }
 
   return (

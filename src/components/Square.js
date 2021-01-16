@@ -1,23 +1,14 @@
 import React from 'react';
 
-import { useGameContext } from '../contexts/GameContext'
+import { useGameContext } from '../contexts/GameContext';
 import t from 'prop-types';
 
-
 export default function Square(props) {
+  const { value, index } = props;
 
-  const {value, index} = props
-
-  const state = useGameContext()
   const {
-    squares,
-    setSquares,
-    isXNext,
-    setIsXNext,
-    whoIsWinner,
-    history,
-    setHistory
-  } = state
+    state: { squares, isXNext, whoIsWinner, history }, dispatch
+  } = useGameContext();
 
   function handleClick() {
     if (squares[index]) return;
@@ -25,17 +16,8 @@ export default function Square(props) {
 
     const newSquares = [...squares];
     newSquares[index] = isXNext ? 'X' : 'O';
-    setSquares(newSquares);
-    setIsXNext(!isXNext);
 
-    setHistory([
-      ...history,
-      {
-        squares: [...squares],
-        isXNext,
-        whoIsWinner,
-      },
-    ]);
+    dispatch({type: "UPDATE_SQUARES", payload: newSquares})
   }
 
   return (

@@ -1,16 +1,12 @@
 import React from 'react';
 
-import { useGameContext } from '../contexts/GameContext'
+import { useGameContext } from '../contexts/GameContext';
 
 export default function Reset() {
-  const state = useGameContext()
-  const { setSquares, setIsXNext, setWhoIsWinner, setHistory } = state
+  const { dispatch } = useGameContext();
 
   function handleClick() {
-    setSquares(Array(9).fill(null));
-    setIsXNext(true);
-    setWhoIsWinner('');
-    setHistory([]);
+    dispatch({ type: 'RESET_GAME' });
   }
 
   return (
