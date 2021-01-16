@@ -1,1 +1,1 @@
-﻿Essa branch apresenta a solução mais básica para o prop drilling no react utilizando context api para servir os estados globais para nossos componentes eliminando o envio via props.
+This branch presents the most basic solution for prop drilling in react using context api to serve the global states for our components eliminating sending via props.
