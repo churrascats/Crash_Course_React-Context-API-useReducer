@@ -1,1 +1,1 @@
-﻿Essa branch mostra o resultado final da nossa implementação, substituimos useState por useReducer para gerenciar nossos estados e servimos os estados globais e o dispatch para nossos componentes através da Context API.
+This branch shows the final result of our implementation, we replace useState with useReducer to manage our states and we serve global states and dispatch to our components through the Context API.
